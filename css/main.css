@@ -9,16 +9,18 @@
 	--gutter: 30px;
 	--small-side: 26;
 	--big-side: 36;
+	--depth: 4000px;
+	--transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
 }
 
 @font-face {
 	font-family: raleway_c;
-	src: url(../assets/fonts/raleway-v22-cyrillic-100.woff2);
+	src: url(/assets/fonts/raleway-v22-cyrillic-100.woff2);
 	font-weight: 100;
 }
 
 @font-face {
-	font-family: raleway_c;
+	font-family: raleway_b;
 	src: url(../assets/fonts/raleway-v22-cyrillic-300.woff2);
 	font-weight: 300;
 }
@@ -29,6 +31,8 @@ body {
 	font-size: calc(var(--index) * 0.8);
 	font-family: raleway_c, sans-serif;
 	line-height: 1.75;
+	height: var(--depth);
+	font-weight: 300;
 }
 
 .container {
@@ -50,4 +54,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: var(--transition), opacity 0.75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
 }
